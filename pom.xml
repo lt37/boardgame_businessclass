@@ -1,5 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <!-- ADAPTER LES PROPRIETES SUIVANTES -->
@@ -50,7 +49,7 @@
 
     <!-- ADAPTER les métadonnées -->
     <name>boardgame_businessclass</name>
-    <description></description>
+    <description />
     <url>https://${github.account}.github.io/boardgame_businessclass/</url>
     <inceptionYear>2017</inceptionYear>
 
@@ -61,10 +60,9 @@
 
     <!--developers>
         <developer>
-            <id>emmanuelbruno</id>
-            <name>Emmanuel Bruno</name>
-            <email>bruno@univ-tln.fr</email>
-            <url>http://bruno.univ-tln.fr</url>
+            <id>loistonnet</id>
+            <name>Loïs Tonnet</name>
+            <email>tonnetlois@gmail.com</email>
             <organization>Université de Toulon</organization>
             <organizationUrl>http://www.univ-tln.fr</organizationUrl>
             <roles>
@@ -109,7 +107,7 @@
         <dependency>
             <groupId>fr.univtln.m2dapm.boardgame</groupId>
             <artifactId>BoardGame_GenericBoard</artifactId>
-            <version>1.0</version>
+            <version>1.1</version>
         </dependency>
 
         <dependency>
