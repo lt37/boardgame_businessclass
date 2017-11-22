@@ -3,6 +3,8 @@ package fr.univtln.m2dapm.boardgame.business.tokens;
 import board.IPlaceable;
 import board.PlaceableBehavior;
 import board.Square;
+import fr.univtln.m2dapm.boardgame.business.gameinfos.Game;
+import fr.univtln.m2dapm.boardgame.business.gameinfos.Player;
 
 
 public class Ship implements IPlaceable {
@@ -13,6 +15,8 @@ public class Ship implements IPlaceable {
     protected int attackPower;
     protected int healthPoints;
     protected ShipType type;
+    protected Player owner;
+    protected Game game;
 
     protected PlaceableBehavior placeableBehavior = new PlaceableBehavior();
 
@@ -26,12 +30,15 @@ public class Ship implements IPlaceable {
      * @param attackPower
      * @param healthPoints
      * @param type
+     * @param owner
      */
-    public Ship(int shipClass, int attackPower, int healthPoints, ShipType type) {
+    public Ship(int shipClass, int attackPower, int healthPoints, ShipType type, Player owner, Game game) {
         this.shipClass = shipClass;
         this.attackPower = attackPower;
         this.healthPoints = healthPoints;
         this.type = type;
+        this.owner = owner;
+        this.game = game;
     }
 
 
@@ -76,5 +83,13 @@ public class Ship implements IPlaceable {
 
     public ShipType getType() {
         return type;
+    }
+
+    public Player getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Player owner) {
+        this.owner = owner;
     }
 }

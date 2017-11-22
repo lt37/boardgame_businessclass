@@ -1,6 +1,8 @@
 package fr.univtln.m2dapm.boardgame.business.bridgedices;
 
 import dices.Dice;
+import fr.univtln.m2dapm.boardgame.business.gameinfos.Game;
+import fr.univtln.m2dapm.boardgame.business.gameinfos.Player;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,15 +16,21 @@ public class Bridge {
 
     private SpecialWeapon specialWeapon;
 
+    private Player owner;
+    private Game game;
+
+
     public Bridge() {
         reserveDices = new ArrayList<>();
         specialDices = new ArrayList<>();
     }
 
-    public Bridge(SpecialWeapon specialWeapon) {
+    public Bridge(SpecialWeapon specialWeapon, Player owner, Game game) {
         reserveDices = new ArrayList<>();
         specialDices = new ArrayList<>();
         this.specialWeapon = specialWeapon;
+        this.owner = owner;
+        this.game = game;
     }
 
     public void addReserveDice(Dice dice) {
@@ -47,5 +55,13 @@ public class Bridge {
 
     public List<Dice> getSpecialDices() {
         return specialDices;
+    }
+
+    public Player getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Player owner) {
+        this.owner = owner;
     }
 }
