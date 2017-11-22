@@ -9,6 +9,10 @@ public class SpecialWeapon {
     private SpecialWeaponType type;
     private Ship owner;
 
+
+    public SpecialWeapon() {
+    }
+
     public SpecialWeapon(SpecialWeaponType type) {
         this.type = type;
     }
