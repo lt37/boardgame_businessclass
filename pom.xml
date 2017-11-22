@@ -60,10 +60,9 @@
 
     <!--developers>
         <developer>
-            <id>emmanuelbruno</id>
-            <name>Emmanuel Bruno</name>
-            <email>bruno@univ-tln.fr</email>
-            <url>http://bruno.univ-tln.fr</url>
+            <id>loistonnet</id>
+            <name>Loïs Tonnet</name>
+            <email>tonnetlois@gmail.com</email>
             <organization>Université de Toulon</organization>
             <organizationUrl>http://www.univ-tln.fr</organizationUrl>
             <roles>
@@ -94,13 +93,21 @@
         </plugins>
     </build>
 
+    <distributionManagement>
+        <repository>
+            <id>bintray-maxtemmerier-maven-repo</id>
+            <name>maxtemmerier-maven-repo</name>
+            <url>https://api.bintray.com/maven/maxtemmerier/maven-repo/boardgame_businessclass/</url>
+        </repository>
+    </distributionManagement>
+
 
     <dependencies>
 
         <dependency>
             <groupId>fr.univtln.m2dapm.boardgame</groupId>
             <artifactId>BoardGame_GenericBoard</artifactId>
-            <version>1.0</version>
+            <version>1.1</version>
         </dependency>
 
         <dependency>
