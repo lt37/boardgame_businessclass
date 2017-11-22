@@ -7,6 +7,8 @@ import java.util.List;
 
 public class Bridge {
 
+    private int id;
+
     private List<Dice> reserveDices;
     private List<Dice> specialDices;
 
