@@ -6,9 +6,12 @@ import board.Square;
 
 public class Field implements IPlaceable {
 
+    private int id;
     private PlaceableBehavior placeableBehavior = new PlaceableBehavior();
     private FieldType type;
 
+    public Field() {
+    }
     public Field(FieldType type) {
         this.type = type;
     }

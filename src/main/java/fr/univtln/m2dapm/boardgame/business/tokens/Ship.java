@@ -7,12 +7,18 @@ import board.Square;
 
 public class Ship implements IPlaceable {
 
+    protected int id;
+
     protected int shipClass;
     protected int attackPower;
     protected int healthPoints;
     protected ShipType type;
 
     protected PlaceableBehavior placeableBehavior = new PlaceableBehavior();
+
+
+    public Ship() {
+    }
 
     /**
      * Constructor (explicit)

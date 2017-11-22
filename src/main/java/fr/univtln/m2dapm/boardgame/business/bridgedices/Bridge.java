@@ -14,7 +14,6 @@ public class Bridge {
 
     private SpecialWeapon specialWeapon;
 
-
     public Bridge() {
         reserveDices = new ArrayList<>();
         specialDices = new ArrayList<>();
