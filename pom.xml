@@ -1,5 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <!-- ADAPTER LES PROPRIETES SUIVANTES -->
@@ -23,6 +22,14 @@
             <name>bintray</name>
             <url>https://dl.bintray.com/dptinfoutln/public</url>
         </repository>
+        <repository>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <id>bintray-maxtemmerier-maven-repo</id>
+            <name>bintray</name>
+            <url>https://dl.bintray.com/maxtemmerier/maven-repo</url>
+        </repository>
     </repositories>
     <pluginRepositories>
         <pluginRepository>
@@ -32,6 +39,14 @@
             <id>bintray-dptinfoutln-public</id>
             <name>bintray-plugins</name>
             <url>https://dl.bintray.com/dptinfoutln/public</url>
+        </pluginRepository>
+        <pluginRepository>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <id>bintray-maxtemmerier-maven-repo</id>
+            <name>bintray-plugins</name>
+            <url>https://dl.bintray.com/maxtemmerier/maven-repo</url>
         </pluginRepository>
     </pluginRepositories>
 
@@ -44,13 +59,13 @@
     <!-- ADAPTER les coordonnées -->
     <groupId>fr.univtln.m2dapm.boardgame</groupId>
     <artifactId>BoardGame_BusinessClass</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <packaging>jar</packaging>
     <!-- ADAPTER les coordonnées -->
 
     <!-- ADAPTER les métadonnées -->
     <name>boardgame_businessclass</name>
-    <description></description>
+    <description />
     <url>https://${github.account}.github.io/boardgame_businessclass/</url>
     <inceptionYear>2017</inceptionYear>
 
@@ -61,10 +76,9 @@
 
     <!--developers>
         <developer>
-            <id>emmanuelbruno</id>
-            <name>Emmanuel Bruno</name>
-            <email>bruno@univ-tln.fr</email>
-            <url>http://bruno.univ-tln.fr</url>
+            <id>loistonnet</id>
+            <name>Loïs Tonnet</name>
+            <email>tonnetlois@gmail.com</email>
             <organization>Université de Toulon</organization>
             <organizationUrl>http://www.univ-tln.fr</organizationUrl>
             <roles>
@@ -95,8 +109,22 @@
         </plugins>
     </build>
 
+    <distributionManagement>
+        <repository>
+            <id>bintray-maxtemmerier-maven-repo</id>
+            <name>maxtemmerier-maven-repo</name>
+            <url>https://api.bintray.com/maven/maxtemmerier/maven-repo/boardgame_businessclass/;publish=1</url>
+        </repository>
+    </distributionManagement>
+
 
     <dependencies>
+
+        <dependency>
+            <groupId>fr.univtln.m2dapm.boardgame</groupId>
+            <artifactId>BoardGame_GenericBoard</artifactId>
+            <version>1.1</version>
+        </dependency>
 
         <dependency>
             <groupId>org.slf4j</groupId>

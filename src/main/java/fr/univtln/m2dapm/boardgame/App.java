@@ -1,5 +1,7 @@
 package fr.univtln.m2dapm.boardgame;
 
+import dices.Dice;
+import fr.univtln.m2dapm.boardgame.business.gameinfos.Game;
 import org.apache.log4j.PatternLayout;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,5 +24,8 @@ public class App {
         logger.info("App started.");
         logger.debug("About to talk :");
         System.out.println("Hello world !");
+
+
+        Game game = new Game.Builder().setName("Clément").setPassword("est gay").setId(69).build();
     }
 }
