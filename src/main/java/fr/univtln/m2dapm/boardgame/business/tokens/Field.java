@@ -4,10 +4,20 @@ import board.IPlaceable;
 import board.PlaceableBehavior;
 import board.Square;
 
+import javax.persistence.*;
+
+@Entity
 public class Field implements IPlaceable {
 
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "field_id")
     private int id;
+
+    @OneToMany
     private PlaceableBehavior placeableBehavior = new PlaceableBehavior();
+
     private FieldType type;
 
     public Field() {

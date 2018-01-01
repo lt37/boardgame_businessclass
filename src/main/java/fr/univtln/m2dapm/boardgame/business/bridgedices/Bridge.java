@@ -4,19 +4,31 @@ import dices.Dice;
 import fr.univtln.m2dapm.boardgame.business.gameinfos.Game;
 import fr.univtln.m2dapm.boardgame.business.gameinfos.Player;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
 public class Bridge {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "bridge_id")
     private int id;
 
+    @OneToMany
     private List<Dice> reserveDices;
+
+    @OneToMany
     private List<Dice> specialDices;
 
+    @OneToOne
     private SpecialWeapon specialWeapon;
 
+    @ManyToOne
     private Player owner;
+
+    @ManyToOne
     private Game game;
 
 

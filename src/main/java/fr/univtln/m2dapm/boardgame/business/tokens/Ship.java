@@ -6,16 +6,28 @@ import board.Square;
 import fr.univtln.m2dapm.boardgame.business.gameinfos.Game;
 import fr.univtln.m2dapm.boardgame.business.gameinfos.Player;
 
+import javax.persistence.*;
 
+
+@Entity
 public class Ship implements IPlaceable {
 
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "ship_id")
     protected int id;
+
 
     protected int shipClass;
     protected int attackPower;
     protected int healthPoints;
     protected ShipType type;
+
+    @ManyToOne
     protected Player owner;
+
+    @ManyToOne
     protected Game game;
 
     protected PlaceableBehavior placeableBehavior = new PlaceableBehavior();

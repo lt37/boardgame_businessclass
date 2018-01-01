@@ -3,11 +3,17 @@ package fr.univtln.m2dapm.boardgame.business.gameinfos;
 import board.Board;
 import fr.univtln.m2dapm.boardgame.business.bridgedices.Bridge;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+
+@Entity
 public class Game {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "game_id")
     private int id;
 
     private String name;
@@ -18,6 +24,8 @@ public class Game {
     private int maxArmyClassValue;
 
     private List<Player> players;
+
+    @OneToOne
     private Board board;
 
 

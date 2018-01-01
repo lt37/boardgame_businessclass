@@ -4,13 +4,25 @@ import fr.univtln.m2dapm.boardgame.business.gameinfos.Game;
 import fr.univtln.m2dapm.boardgame.business.gameinfos.Player;
 import fr.univtln.m2dapm.boardgame.business.tokens.Ship;
 
+import javax.persistence.*;
+
+@Entity
 public class SpecialWeapon {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "special_id")
     private int id;
 
     private SpecialWeaponType type;
+
+    @OneToOne // A voir
     private Ship ownerShip;
+
+    @OneToOne
     private Player owner;
+
+    @ManyToOne
     private Game game;
 
 
