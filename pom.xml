@@ -123,7 +123,7 @@
         <dependency>
             <groupId>fr.univtln.m2dapm.boardgame</groupId>
             <artifactId>BoardGame_GenericBoard</artifactId>
-            <version>1.2.0-dev-69</version>
+            <version>1.2.0-dev-71</version>
         </dependency>
 
         <dependency>
