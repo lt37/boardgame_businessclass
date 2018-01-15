@@ -40,6 +40,30 @@ public class Player {
         return id;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setLoginName(String loginName) {
+        this.loginName = loginName;
+    }
+
+    public void setEncryptedPassword(String encryptedPassword) {
+        this.encryptedPassword = encryptedPassword;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setDisplayedName(String displayedName) {
+        this.displayedName = displayedName;
+    }
+
+    public void setOngoingGames(List<Game> ongoingGames) {
+        this.ongoingGames = ongoingGames;
+    }
+
     public String getLoginName() {
         return loginName;
     }
