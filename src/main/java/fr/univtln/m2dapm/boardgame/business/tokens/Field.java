@@ -35,9 +35,4 @@ public class Field implements IPlaceable {
     public void setSquare(Square square) {
         placeableBehavior.setSquare(square);
     }
-
-    @Override
-    public void changeSquare() {
-        //TODO: delete this
-    }
 }
