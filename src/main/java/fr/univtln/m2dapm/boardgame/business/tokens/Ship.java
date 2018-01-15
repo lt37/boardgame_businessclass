@@ -67,12 +67,6 @@ public class Ship implements IPlaceable {
         placeableBehavior.setSquare(square);
     }
 
-    //TODO: remove from interface
-    @Override
-    public void changeSquare() {
-    }
-
-
     public int getShipClass() {
         return shipClass;
     }
