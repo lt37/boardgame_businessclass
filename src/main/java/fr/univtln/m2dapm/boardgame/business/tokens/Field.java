@@ -5,9 +5,10 @@ import fr.univtln.m2dapm.boardgame.business.board.PlaceableBehavior;
 import fr.univtln.m2dapm.boardgame.business.board.Square;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
-public class Field implements IPlaceable {
+public class Field implements IPlaceable, Serializable {
 
 
     @Id
@@ -18,6 +19,7 @@ public class Field implements IPlaceable {
     @OneToMany
     private PlaceableBehavior placeableBehavior = new PlaceableBehavior();
 
+    @Enumerated(EnumType.STRING)
     private FieldType type;
 
     public Field() {

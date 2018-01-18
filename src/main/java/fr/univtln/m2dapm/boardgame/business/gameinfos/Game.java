@@ -4,12 +4,13 @@ import fr.univtln.m2dapm.boardgame.business.board.Board;
 import fr.univtln.m2dapm.boardgame.business.bridgedices.Bridge;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 
 @Entity
-public class Game {
+public class Game implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

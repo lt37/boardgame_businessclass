@@ -1,12 +1,13 @@
 package fr.univtln.m2dapm.boardgame.business.gameinfos;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 
 @Entity
-public class Player {
+public class Player implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

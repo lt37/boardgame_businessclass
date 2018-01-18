@@ -7,10 +7,11 @@ import fr.univtln.m2dapm.boardgame.business.gameinfos.Game;
 import fr.univtln.m2dapm.boardgame.business.gameinfos.Player;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 
 @Entity
-public class Ship implements IPlaceable {
+public class Ship implements IPlaceable, Serializable {
 
 
     @Id
@@ -22,6 +23,8 @@ public class Ship implements IPlaceable {
     protected int shipClass;
     protected int attackPower;
     protected int healthPoints;
+
+    @Enumerated(EnumType.STRING)
     protected ShipType type;
 
     @ManyToOne
