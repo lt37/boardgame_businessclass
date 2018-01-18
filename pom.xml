@@ -121,12 +121,6 @@
     <dependencies>
 
         <dependency>
-            <groupId>fr.univtln.m2dapm.boardgame</groupId>
-            <artifactId>BoardGame_GenericBoard</artifactId>
-            <version>1.2.0-dev-71</version>
-        </dependency>
-
-        <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
         </dependency>

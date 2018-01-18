@@ -1,6 +1,6 @@
 package fr.univtln.m2dapm.boardgame.business.bridgedices;
 
-import dices.Dice;
+import fr.univtln.m2dapm.boardgame.business.dices.Dice;
 import fr.univtln.m2dapm.boardgame.business.gameinfos.Game;
 import fr.univtln.m2dapm.boardgame.business.gameinfos.Player;
 

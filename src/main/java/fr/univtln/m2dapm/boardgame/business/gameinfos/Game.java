@@ -1,6 +1,6 @@
 package fr.univtln.m2dapm.boardgame.business.gameinfos;
 
-import board.Board;
+import fr.univtln.m2dapm.boardgame.business.board.Board;
 import fr.univtln.m2dapm.boardgame.business.bridgedices.Bridge;
 
 import javax.persistence.*;

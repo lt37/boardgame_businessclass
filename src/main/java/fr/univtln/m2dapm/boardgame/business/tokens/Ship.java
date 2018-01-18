@@ -1,8 +1,8 @@
 package fr.univtln.m2dapm.boardgame.business.tokens;
 
-import board.IPlaceable;
-import board.PlaceableBehavior;
-import board.Square;
+import fr.univtln.m2dapm.boardgame.business.board.IPlaceable;
+import fr.univtln.m2dapm.boardgame.business.board.PlaceableBehavior;
+import fr.univtln.m2dapm.boardgame.business.board.Square;
 import fr.univtln.m2dapm.boardgame.business.gameinfos.Game;
 import fr.univtln.m2dapm.boardgame.business.gameinfos.Player;
 
