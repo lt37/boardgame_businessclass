@@ -18,9 +18,9 @@ public class Square implements Serializable {
 
     private int[] coordinates;
 
+    public Square(){}
 
-
-    Square(int[] coordinates) {
+    public Square(int[] coordinates) {
         this.coordinates = coordinates;
     }
 

@@ -26,6 +26,7 @@ public class Board implements Serializable {
     private int columns;
     private String name;
 
+    public Board() {}
 
     public Board(String name,int lines, int column) {
         this.lines = lines;
