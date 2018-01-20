@@ -10,4 +10,6 @@ import javax.persistence.InheritanceType;
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public abstract class AbstractToken{
     public abstract void setSquare(Square square);
+
+    public abstract Square getSquare();
 }
