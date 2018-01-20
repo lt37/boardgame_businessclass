@@ -1,6 +1,5 @@
 package fr.univtln.m2dapm.boardgame.business.gameinfos;
 
-import com.sun.scenario.effect.Brightpass;
 import fr.univtln.m2dapm.boardgame.business.board.Board;
 import fr.univtln.m2dapm.boardgame.business.bridgedices.Bridge;
 import fr.univtln.m2dapm.boardgame.business.tokens.Ship;
