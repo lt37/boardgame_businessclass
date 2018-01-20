@@ -20,7 +20,7 @@ public class Board implements Serializable {
     @Column(name = "board_id")
     private int id;
 
-    @OneToOne(mappedBy = "board")
+    @OneToOne
     private Game game;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "board")

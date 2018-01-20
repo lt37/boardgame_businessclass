@@ -18,7 +18,7 @@ public class SpecialWeapon implements Serializable {
     @Enumerated(EnumType.STRING)
     private SpecialWeaponType type;
 
-    @OneToOne(mappedBy = "specialWeapon")
+    @OneToOne
     private Bridge bridge;
 
 
