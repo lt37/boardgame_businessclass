@@ -7,7 +7,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@AttributeOverride(name = "id", column = @Column(name = "field_id"))
+@AttributeOverride(name = "token_id", column = @Column(name = "field_id"))
 public class Field implements Serializable {
 
     @OneToOne

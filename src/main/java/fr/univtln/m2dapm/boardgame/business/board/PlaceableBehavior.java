@@ -1,13 +1,13 @@
 package fr.univtln.m2dapm.boardgame.business.board;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
 public class PlaceableBehavior  implements Serializable {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "placeablebehavior_id")
     int id;
 
     @OneToOne
