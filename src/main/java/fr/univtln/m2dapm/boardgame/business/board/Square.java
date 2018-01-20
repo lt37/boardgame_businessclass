@@ -1,5 +1,7 @@
 package fr.univtln.m2dapm.boardgame.business.board;
 
+import fr.univtln.m2dapm.boardgame.business.tokens.AbstractToken;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -17,7 +19,7 @@ public class Square implements Serializable {
     private Board board;
 
     @OneToMany(cascade = CascadeType.ALL)
-    private List<IPlaceable> tokens = new ArrayList<>();
+    private List<AbstractToken> tokens = new ArrayList<>();
 
     private int[] coordinates;
 
@@ -27,16 +29,16 @@ public class Square implements Serializable {
         this.coordinates = coordinates;
     }
 
-    public List<IPlaceable> getTokens() {
+    public List<AbstractToken> getTokens() {
         return tokens;
     }
 
-    public void setTokens(List<IPlaceable> tokens) {
-        for(IPlaceable token : this.tokens) {
+    public void setTokens(List<AbstractToken> tokens) {
+        for(AbstractToken token : this.tokens) {
             token.setSquare(null);
         }
         this.tokens = tokens;
-        for(IPlaceable token : this.tokens) {
+        for(AbstractToken token : this.tokens) {
             token.setSquare(this);
         }
     }
@@ -49,19 +51,19 @@ public class Square implements Serializable {
         this.coordinates = coordinates;
     }
 
-    public void addToken(IPlaceable token){
+    public void addToken(AbstractToken token){
         tokens.add(token);
         token.setSquare(this);
     }
 
-    public void addTokens(List<IPlaceable> tokenList){
+    public void addTokens(List<AbstractToken> tokenList){
         tokens.addAll(tokenList);
-        for (IPlaceable token : tokenList){
+        for (AbstractToken token : tokenList){
             token.setSquare(this);
         }
     }
 
-    public void removeToken(IPlaceable token){
+    public void removeToken(AbstractToken token){
         tokens.remove(token);
         token.setSquare(null);
 
@@ -69,7 +71,7 @@ public class Square implements Serializable {
 
     public void removeAllToken(){
         tokens.clear();
-        for (IPlaceable token : tokens){
+        for (AbstractToken token : tokens){
             token.setSquare(null);
         }
     }

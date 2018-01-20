@@ -11,7 +11,7 @@ import java.io.Serializable;
 
 
 @Entity
-public class Ship implements IPlaceable, Serializable {
+public class Ship extends AbstractToken implements IPlaceable, Serializable {
 
 
     @Id
