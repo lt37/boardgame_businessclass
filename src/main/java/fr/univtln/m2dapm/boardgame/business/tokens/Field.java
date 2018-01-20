@@ -7,8 +7,9 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @AttributeOverride(name = "id", column = @Column(name = "field_id"))
-public class Field extends AbstractToken implements Serializable {
+public class Field implements Serializable {
 
     @OneToOne
     private PlaceableBehavior placeableBehavior = new PlaceableBehavior();
@@ -22,12 +23,10 @@ public class Field extends AbstractToken implements Serializable {
         this.type = type;
     }
 
-    @Override
     public Square getSquare() {
         return placeableBehavior.getSquare();
     }
 
-    @Override
     public void setSquare(Square square) {
         placeableBehavior.setSquare(square);
     }

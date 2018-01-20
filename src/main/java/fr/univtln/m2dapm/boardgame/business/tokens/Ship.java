@@ -10,8 +10,9 @@ import java.io.Serializable;
 
 
 @Entity
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @AttributeOverride(name = "id", column = @Column(name = "ship_id"))
-public class Ship extends AbstractToken implements Serializable {
+public class Ship implements Serializable {
 
     protected int shipClass;
     protected int attackPower;
@@ -54,12 +55,10 @@ public class Ship extends AbstractToken implements Serializable {
     /*
     Interface methods (delegated to placeableBehavior)
      */
-    @Override
     public Square getSquare() {
         return placeableBehavior.getSquare();
     }
 
-    @Override
     public void setSquare(Square square) {
         placeableBehavior.setSquare(square);
     }

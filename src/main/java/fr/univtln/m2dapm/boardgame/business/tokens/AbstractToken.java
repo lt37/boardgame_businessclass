@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 @MappedSuperclass
 public abstract class AbstractToken{
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "token_id")
