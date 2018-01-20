@@ -7,8 +7,12 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@AttributeOverride(name = "id", column = @Column(name = "field_id"))
 public class Field implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "field_id")
+    private int id;
 
     @OneToOne
     private PlaceableBehavior placeableBehavior = new PlaceableBehavior();

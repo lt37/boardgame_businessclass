@@ -10,8 +10,12 @@ import java.io.Serializable;
 
 
 @Entity
-@AttributeOverride(name = "id", column = @Column(name = "ship_id"))
 public class Ship implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "ship_id")
+    private int id;
 
     protected int shipClass;
     protected int attackPower;
