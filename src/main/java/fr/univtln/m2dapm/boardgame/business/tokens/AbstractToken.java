@@ -4,7 +4,8 @@ import fr.univtln.m2dapm.boardgame.business.board.Square;
 
 import javax.persistence.*;
 
-@MappedSuperclass
+@Entity
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public abstract class AbstractToken{
 
     @Id

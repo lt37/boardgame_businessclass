@@ -7,7 +7,6 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @AttributeOverride(name = "id", column = @Column(name = "field_id"))
 public class Field implements Serializable {
 

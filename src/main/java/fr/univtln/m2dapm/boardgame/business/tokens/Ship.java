@@ -10,7 +10,6 @@ import java.io.Serializable;
 
 
 @Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @AttributeOverride(name = "id", column = @Column(name = "ship_id"))
 public class Ship implements Serializable {
 
