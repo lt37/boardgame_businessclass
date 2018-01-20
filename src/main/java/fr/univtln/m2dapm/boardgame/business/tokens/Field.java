@@ -10,12 +10,6 @@ import java.io.Serializable;
 @Entity
 public class Field extends AbstractToken implements Serializable {
 
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "field_id")
-    private int id;
-
     @OneToOne
     private PlaceableBehavior placeableBehavior = new PlaceableBehavior();
 
