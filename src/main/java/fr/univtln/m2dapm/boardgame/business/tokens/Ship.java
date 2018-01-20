@@ -13,6 +13,13 @@ import java.io.Serializable;
 @Entity
 public class Ship extends AbstractToken implements Serializable {
 
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "ship_id")
+    protected int id;
+
+
     protected int shipClass;
     protected int attackPower;
     protected int healthPoints;
