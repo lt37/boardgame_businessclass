@@ -2,9 +2,8 @@ package fr.univtln.m2dapm.boardgame.business.board;
 
 
 import fr.univtln.m2dapm.boardgame.business.gameinfos.Game;
-import fr.univtln.m2dapm.boardgame.business.tokens.AbstractToken;
+import fr.univtln.m2dapm.boardgame.business.tokens.Ship;
 import org.apache.log4j.Logger;
-import org.eclipse.persistence.annotations.CascadeOnDelete;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -115,15 +114,15 @@ public class Board implements Serializable {
 
     /**
      * Move token  to nbCase in direction.
-     * @param token
+     * @param ship
      * @param direction 1 (default) :TOP 2:TOP/RIGHT 3:RIGHT 4:BOTTOM/RIGHT 5:BOTTOM 6:BOTTOM/LEFT 7:LEFT 8: (default) TOP/LEFT
      * @param nbSquare
      */
 
-    public void movement(AbstractToken token, int direction, int nbSquare){
+    public void movement(Ship ship, int direction, int nbSquare){
 
-        int[] initialCoordonate = token.getSquare().getCoordinates();
-        token.getSquare().removeToken(token);
+        int[] initialCoordonate = ship.getSquare().getCoordinates();
+        ship.getSquare().removeShip(ship);
         int tabPlacment = this.columns*initialCoordonate[1]+initialCoordonate[0];
 
         Square newSquare = null;
@@ -146,11 +145,11 @@ public class Board implements Serializable {
             break;
             case 8: newSquare = this.squares.get(tabPlacment-(this.columns*nbSquare)-nbSquare);
             break;
-            default: newSquare = token.getSquare();
+            default: newSquare = ship.getSquare();
             break;
             }
 
-            newSquare.addToken(token);
+            newSquare.addShip(ship);
         } catch (Exception e){
           logger.error("Error on movement: "+e);
         }
@@ -159,14 +158,14 @@ public class Board implements Serializable {
 
     /**
      *  Place  Iplaceable "token" in the square that have coordonate x and y
-     * @param token
+     * @param ship
      * @param x
      * @param y
      */
-    public void putTokenOn(AbstractToken token,int x, int y ){
+    public void putShipOn(Ship ship,int x, int y ){
 
         if(x < this.columns && y < this.lines && x>=0 && y>=0){
-            this.squares.get(convertCoordToIndex(x,y)).addToken(token);
+            this.squares.get(convertCoordToIndex(x,y)).addShip(ship);
         }
         //Exception a rajouter
     }

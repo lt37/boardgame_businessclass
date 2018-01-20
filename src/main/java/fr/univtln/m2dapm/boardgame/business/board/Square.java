@@ -1,6 +1,7 @@
 package fr.univtln.m2dapm.boardgame.business.board;
 
-import fr.univtln.m2dapm.boardgame.business.tokens.AbstractToken;
+import fr.univtln.m2dapm.boardgame.business.tokens.Field;
+import fr.univtln.m2dapm.boardgame.business.tokens.Ship;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -19,7 +20,10 @@ public class Square implements Serializable {
     private Board board;
 
     @OneToMany(cascade = CascadeType.ALL)
-    private List<AbstractToken> tokens = new ArrayList<>();
+    private List<Ship> ships = new ArrayList<>();
+
+    @OneToOne
+    private Field field;
 
     private int[] coordinates;
 
@@ -29,17 +33,17 @@ public class Square implements Serializable {
         this.coordinates = coordinates;
     }
 
-    public List<AbstractToken> getTokens() {
-        return tokens;
+    public List<Ship> getShips() {
+        return ships;
     }
 
-    public void setTokens(List<AbstractToken> tokens) {
-        for(AbstractToken token : this.tokens) {
-            token.setSquare(null);
+    public void setShips(List<Ship> tokens) {
+        for(Ship ship : this.ships) {
+            ship.setSquare(null);
         }
-        this.tokens = tokens;
-        for(AbstractToken token : this.tokens) {
-            token.setSquare(this);
+        this.ships = tokens;
+        for(Ship ship : this.ships) {
+            ship.setSquare(this);
         }
     }
 
@@ -51,28 +55,36 @@ public class Square implements Serializable {
         this.coordinates = coordinates;
     }
 
-    public void addToken(AbstractToken token){
-        tokens.add(token);
-        token.setSquare(this);
+    public void addShip(Ship ship){
+        ships.add(ship);
+        ship.setSquare(this);
     }
 
-    public void addTokens(List<AbstractToken> tokenList){
-        tokens.addAll(tokenList);
-        for (AbstractToken token : tokenList){
-            token.setSquare(this);
+    public void addShips(List<Ship> shipList){
+        ships.addAll(shipList);
+        for (Ship ship : shipList){
+            ship.setSquare(this);
         }
     }
 
-    public void removeToken(AbstractToken token){
-        tokens.remove(token);
-        token.setSquare(null);
+    public void removeShip(Ship ship){
+        ships.remove(ship);
+        ship.setSquare(null);
 
     }
 
-    public void removeAllToken(){
-        tokens.clear();
-        for (AbstractToken token : tokens){
-            token.setSquare(null);
+    public Field getField() {
+        return field;
+    }
+
+    public void setField(Field field) {
+        this.field = field;
+    }
+
+    public void removeAllShip(){
+        ships.clear();
+        for (Ship ship : ships){
+            ship.setSquare(null);
         }
     }
 
@@ -83,13 +95,13 @@ public class Square implements Serializable {
 
         Square aSquare = (Square) o;
 
-        if (tokens != null ? !tokens.equals(aSquare.tokens) : aSquare.tokens != null) return false;
+        if (ships != null ? !ships.equals(aSquare.ships) : aSquare.ships != null) return false;
         return Arrays.equals(coordinates, aSquare.coordinates);
     }
 
     @Override
     public int hashCode() {
-        int result = tokens != null ? tokens.hashCode() : 0;
+        int result = ships != null ? ships.hashCode() : 0;
         result = 31 * result + Arrays.hashCode(coordinates);
         return result;
     }
