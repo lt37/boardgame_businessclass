@@ -8,7 +8,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-public class Field extends AbstractToken implements IPlaceable, Serializable {
+public class Field extends AbstractToken implements Serializable {
 
 
     @Id
