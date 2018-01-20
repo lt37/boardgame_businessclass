@@ -1,7 +1,9 @@
 package fr.univtln.m2dapm.boardgame.business.board;
 
 
+import fr.univtln.m2dapm.boardgame.business.gameinfos.Game;
 import org.apache.log4j.Logger;
+import org.eclipse.persistence.annotations.CascadeOnDelete;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -18,7 +20,10 @@ public class Board implements Serializable {
     @Column(name = "board_id")
     private int id;
 
-    @OneToMany
+    @OneToOne(mappedBy = "board")
+    private Game game;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "board")
     private List<Square> squares = new ArrayList<>();
 
 

@@ -18,14 +18,8 @@ public class SpecialWeapon implements Serializable {
     @Enumerated(EnumType.STRING)
     private SpecialWeaponType type;
 
-    @OneToOne // A voir
-    private Ship ownerShip;
-
-    @OneToOne
-    private Player owner;
-
-    @ManyToOne
-    private Game game;
+    @OneToOne(mappedBy = "specialWeapon")
+    private Bridge bridge;
 
 
     public SpecialWeapon() {
@@ -35,30 +29,20 @@ public class SpecialWeapon implements Serializable {
         this.type = type;
     }
 
-    public SpecialWeapon(SpecialWeaponType type, Ship ownerShip, Player owner, Game game) {
+    public SpecialWeapon(SpecialWeaponType type, Bridge bridge) {
         this.type = type;
-        this.ownerShip = ownerShip;
-        this.owner = owner;
-        this.game = game;
+        this.bridge = bridge;
     }
 
     public SpecialWeaponType getType() {
         return type;
     }
 
-    public Ship getOwnerShip() {
-        return ownerShip;
+    public Bridge getBridge() {
+        return bridge;
     }
 
-    public void setOwnerShip(Ship ownerShip) {
-        this.ownerShip = ownerShip;
-    }
-
-    public Player getOwner() {
-        return owner;
-    }
-
-    public void setOwner(Player owner) {
-        this.owner = owner;
+    public void setBridge(Bridge bridge) {
+        this.bridge = bridge;
     }
 }

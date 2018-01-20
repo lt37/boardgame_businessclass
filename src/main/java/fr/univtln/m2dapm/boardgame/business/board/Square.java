@@ -13,7 +13,10 @@ public class Square implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    @OneToMany
+    @ManyToOne
+    private Board board;
+
+    @OneToMany(cascade = CascadeType.ALL)
     private List<IPlaceable> tokens = new ArrayList<>();
 
     private int[] coordinates;

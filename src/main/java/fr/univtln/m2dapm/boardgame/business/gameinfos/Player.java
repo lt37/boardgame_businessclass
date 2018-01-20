@@ -1,5 +1,7 @@
 package fr.univtln.m2dapm.boardgame.business.gameinfos;
 
+import fr.univtln.m2dapm.boardgame.business.tokens.Ship;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -14,14 +16,18 @@ public class Player implements Serializable {
     @Column(name = "game_id")
     private int id;
 
+    @ManyToMany(cascade = CascadeType.ALL)
+    private List<Game> ongoingGames;
+
     private String loginName;
     private String encryptedPassword;
     private String email;
 
     private String displayedName;
 
-    @OneToMany
-    private List<Game> ongoingGames;
+
+
+
 
 
     public Player() {

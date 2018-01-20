@@ -16,7 +16,7 @@ public class Field implements IPlaceable, Serializable {
     @Column(name = "field_id")
     private int id;
 
-    @OneToMany
+    @OneToOne
     private PlaceableBehavior placeableBehavior = new PlaceableBehavior();
 
     @Enumerated(EnumType.STRING)

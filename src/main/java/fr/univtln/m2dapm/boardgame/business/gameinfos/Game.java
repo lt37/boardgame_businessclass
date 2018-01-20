@@ -1,7 +1,9 @@
 package fr.univtln.m2dapm.boardgame.business.gameinfos;
 
+import com.sun.scenario.effect.Brightpass;
 import fr.univtln.m2dapm.boardgame.business.board.Board;
 import fr.univtln.m2dapm.boardgame.business.bridgedices.Bridge;
+import fr.univtln.m2dapm.boardgame.business.tokens.Ship;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -17,6 +19,18 @@ public class Game implements Serializable {
     @Column(name = "game_id")
     private int id;
 
+    @OneToOne(mappedBy = "game")
+    private Board board;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    private List<Player> players;
+
+    @OneToMany(mappedBy = "game", cascade = CascadeType.ALL)
+    private List<Ship> ships;
+
+    @OneToMany(mappedBy = "game", cascade = CascadeType.ALL)
+    private List<Bridge> bridges;
+
     private String name;
     private String password;
     private boolean aPrivate;
@@ -24,10 +38,6 @@ public class Game implements Serializable {
     private int maxPlayers;
     private int maxArmyClassValue;
 
-    private List<Player> players;
-
-    @OneToOne
-    private Board board;
 
 
     public Game() {
@@ -35,7 +45,7 @@ public class Game implements Serializable {
     }
 
     private Game(Builder builder) {
-        this.id = builder.id;
+            this.id = builder.id;
 
         this.name = builder.name;
         this.password = builder.password;
@@ -46,6 +56,7 @@ public class Game implements Serializable {
 
         this.players = builder.players;
         this.board = builder.board;
+        this.bridges = builder.bridges;
     }
 
     public int getId() {
@@ -126,6 +137,8 @@ public class Game implements Serializable {
         private List<Player> players;
         private Board board;
 
+        private List<Bridge> bridges;
+
 
         public Game build() {
             this.setId(id);
@@ -136,6 +149,7 @@ public class Game implements Serializable {
             this.setMaxArmyClassValue(maxArmyClassValue);
             this.setPlayers(players);
             this.setBoard(board);
+            this.setBridge(bridges);
 
             return new Game(this);
         }
@@ -177,6 +191,11 @@ public class Game implements Serializable {
 
         public Builder setBoard(Board board) {
             this.board = board;
+            return this;
+        }
+
+        public Builder setBridge(List<Bridge> bridges){
+            this.bridges = bridges;
             return this;
         }
     }

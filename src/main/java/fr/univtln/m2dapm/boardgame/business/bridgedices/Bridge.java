@@ -17,16 +17,16 @@ public class Bridge implements Serializable {
     @Column(name = "bridge_id")
     private int id;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Dice> reserveDices;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Dice> specialDices;
 
-    @OneToOne
+    @OneToOne(mappedBy = "bridge")
     private SpecialWeapon specialWeapon;
 
-    @ManyToOne
+    @OneToOne
     private Player owner;
 
     @ManyToOne

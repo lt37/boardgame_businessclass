@@ -27,12 +27,13 @@ public class Ship implements IPlaceable, Serializable {
     @Enumerated(EnumType.STRING)
     protected ShipType type;
 
-    @ManyToOne
+    @OneToOne
     protected Player owner;
 
     @ManyToOne
     protected Game game;
 
+    @OneToOne
     protected PlaceableBehavior placeableBehavior = new PlaceableBehavior();
 
 
