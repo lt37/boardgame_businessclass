@@ -18,7 +18,7 @@ public class Game implements Serializable {
     @Column(name = "game_id")
     private int id;
 
-    @OneToOne(mappedBy = "game")
+    @OneToOne(mappedBy = "game", cascade = CascadeType.PERSIST)
     private Board board;
 
     @ManyToMany(cascade = CascadeType.ALL)
