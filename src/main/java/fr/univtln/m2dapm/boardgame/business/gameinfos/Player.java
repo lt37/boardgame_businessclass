@@ -7,8 +7,14 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import static fr.univtln.m2dapm.boardgame.business.gameinfos.Player.GET_ALL;
+
 
 @Entity
+@NamedQueries({
+        @NamedQuery(name = GET_ALL,
+        query = "SELECT p FROM Player AS p")
+})
 public class Player implements Serializable {
 
     @Id
@@ -25,6 +31,8 @@ public class Player implements Serializable {
 
     private String displayedName;
 
+    @Transient
+    public static final String GET_ALL = "get_all_players";
 
 
 
