@@ -1,18 +1,15 @@
 package fr.univtln.m2dapm.boardgame.business.gameinfos;
 
-import fr.univtln.m2dapm.boardgame.business.tokens.Ship;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import static fr.univtln.m2dapm.boardgame.business.gameinfos.Player.GET_ALL;
-
 
 @Entity
 @NamedQueries({
-        @NamedQuery(name = GET_ALL,
+        @NamedQuery(name = Player.GET_ALL,
         query = "SELECT p FROM Player AS p")
 })
 public class Player implements Serializable {
