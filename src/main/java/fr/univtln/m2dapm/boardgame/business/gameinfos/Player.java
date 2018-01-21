@@ -7,11 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-@Entity
-@NamedQueries({
-        @NamedQuery(name = Player.GET_ALL,
-        query = "SELECT p FROM Player AS p")
-})
 public class Player implements Serializable {
 
     @Id
@@ -27,9 +22,6 @@ public class Player implements Serializable {
     private String email;
 
     private String displayedName;
-
-    @Transient
-    public static final String GET_ALL = "get_all_players";
 
 
 

@@ -10,11 +10,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-@Entity
-@NamedQueries({
-        @NamedQuery(name = Game.GET_ALL,
-        query = "SELECT g FROM Game AS g")
-})
 public class Game implements Serializable {
 
     @Id
@@ -41,8 +36,6 @@ public class Game implements Serializable {
     private int maxPlayers;
     private int maxArmyClassValue;
 
-    @Transient
-    public static final String GET_ALL = "get_all_games";
 
 
 
