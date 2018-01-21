@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+@Entity
 public class Game implements Serializable {
 
     @Id
