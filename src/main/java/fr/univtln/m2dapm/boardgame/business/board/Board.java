@@ -71,14 +71,6 @@ public class Board implements Serializable {
         this.lines = lines;
     }
 
-    public int getColumn() {
-        return columns;
-    }
-
-    public void setColumn(int column) {
-        this.columns = column;
-    }
-
     public String getName() {
         return name;
     }
@@ -87,7 +79,29 @@ public class Board implements Serializable {
         this.name = name;
     }
 
+    public int getId() {
+        return id;
+    }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Game getGame() {
+        return game;
+    }
+
+    public void setGame(Game game) {
+        this.game = game;
+    }
+
+    public int getColumns() {
+        return columns;
+    }
+
+    public void setColumns(int columns) {
+        this.columns = columns;
+    }
 
     @Override
     public boolean equals(Object o) {

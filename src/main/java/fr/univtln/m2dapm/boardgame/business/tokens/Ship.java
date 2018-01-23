@@ -97,4 +97,36 @@ public class Ship implements Serializable {
     public void setOwner(Player owner) {
         this.owner = owner;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setShipClass(int shipClass) {
+        this.shipClass = shipClass;
+    }
+
+    public void setType(ShipType type) {
+        this.type = type;
+    }
+
+    public Game getGame() {
+        return game;
+    }
+
+    public void setGame(Game game) {
+        this.game = game;
+    }
+
+    public PlaceableBehavior getPlaceableBehavior() {
+        return placeableBehavior;
+    }
+
+    public void setPlaceableBehavior(PlaceableBehavior placeableBehavior) {
+        this.placeableBehavior = placeableBehavior;
+    }
 }

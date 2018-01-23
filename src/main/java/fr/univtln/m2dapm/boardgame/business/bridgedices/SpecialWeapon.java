@@ -45,4 +45,16 @@ public class SpecialWeapon implements Serializable {
     public void setBridge(Bridge bridge) {
         this.bridge = bridge;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setType(SpecialWeaponType type) {
+        this.type = type;
+    }
 }

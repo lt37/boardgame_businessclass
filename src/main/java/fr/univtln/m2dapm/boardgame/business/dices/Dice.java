@@ -84,4 +84,12 @@ public class Dice  implements Serializable{
                 ", nbSides=" + nbSides +
                 '}';
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }

@@ -33,4 +33,28 @@ public class Field implements Serializable {
     public void setSquare(Square square) {
         placeableBehavior.setSquare(square);
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public PlaceableBehavior getPlaceableBehavior() {
+        return placeableBehavior;
+    }
+
+    public void setPlaceableBehavior(PlaceableBehavior placeableBehavior) {
+        this.placeableBehavior = placeableBehavior;
+    }
+
+    public FieldType getType() {
+        return type;
+    }
+
+    public void setType(FieldType type) {
+        this.type = type;
+    }
 }

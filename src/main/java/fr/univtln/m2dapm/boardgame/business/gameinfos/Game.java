@@ -123,6 +123,25 @@ public class Game implements Serializable {
         this.board = board;
     }
 
+    public void setPlayers(List<Player> players) {
+        this.players = players;
+    }
+
+    public List<Ship> getShips() {
+        return ships;
+    }
+
+    public void setShips(List<Ship> ships) {
+        this.ships = ships;
+    }
+
+    public List<Bridge> getBridges() {
+        return bridges;
+    }
+
+    public void setBridges(List<Bridge> bridges) {
+        this.bridges = bridges;
+    }
 
     public static class Builder {
         private int id;

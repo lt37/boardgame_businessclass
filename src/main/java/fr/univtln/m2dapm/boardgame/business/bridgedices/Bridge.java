@@ -77,4 +77,36 @@ public class Bridge implements Serializable {
     public void setOwner(Player owner) {
         this.owner = owner;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setReserveDices(List<Dice> reserveDices) {
+        this.reserveDices = reserveDices;
+    }
+
+    public void setSpecialDices(List<Dice> specialDices) {
+        this.specialDices = specialDices;
+    }
+
+    public SpecialWeapon getSpecialWeapon() {
+        return specialWeapon;
+    }
+
+    public void setSpecialWeapon(SpecialWeapon specialWeapon) {
+        this.specialWeapon = specialWeapon;
+    }
+
+    public Game getGame() {
+        return game;
+    }
+
+    public void setGame(Game game) {
+        this.game = game;
+    }
 }
